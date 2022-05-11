@@ -33,35 +33,3 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 test.html
 
-# Images and Icons #
-####################
-*.png
-*.jpg
-*.gif
-*.tiff
-*.ico
-
-# Fonts #
-#########
-*.eot
-*.svg
-*.ttf
-*.woff
-*.woff2
-*.otf
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-thumbs.db
-Thumbs.db
