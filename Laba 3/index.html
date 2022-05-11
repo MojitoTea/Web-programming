@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table Practice</title>
+</head>
+<body>
+<style>
+  table{
+  	height:400px;
+  }
+  .head{
+  	font-weight:bold; 
+  	text-align:center; 
+  	font-size:20px
+  }
+  .zona{
+  	height:60px; 
+  	width:400px
+  }
+ 
+</style>
+<table border="2px solid black" width="50%">
+  <tr>
+    <td class="head" colspan="2">Pizza Shop 2.0</td>
+  </tr>
+   <tr>
+    <td width="30%">Name</td>
+    <td width="70%"><input type="textbox" name="name" size="25"></td>
+  </tr>
+  <tr>
+    <td width="30%">Pizza Topping</td>
+    <td width="70%"><input type="radio" name="name" size="25">Supreme</input><br />
+  <input type="radio" name="name" size="25">Vegetarian</input><br />
+  <input type="radio" name="name" size="25">Hawaiian</input><br />
+  </tr>
+   <tr>
+    <td width="30%">Pizza Sauce</td>
+    <td width="70%"><select>
+    	<option selected>Tomato</option>
+     <option>Fish</option>
+     <option>Meat</option>
+    </td>
+  </tr>
+ <tr>
+    <td width="30%">Optional Extras</td>
+    <td width="70%"><input type="checkbox" name="chesse">Extra Cheese</input>
+<input type="checkbox" name="gluten" size="25">Gluten Free Base</input></td></tr>
+<tr>
+    <td colspan="2">Delivery Instructions:<br /><textarea class="zona"></textarea></td>
+  </tr>
+<tr><td colspan="2"><input type="button" value="Send my Order"></td></tr>
+</table>
+<html>
