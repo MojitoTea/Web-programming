@@ -6,7 +6,14 @@ class Employee {
         this.exp = exp;
     }
     countedSalary() {
-        return this.exp > 2 ? this.baseSalary + 200 : (this.exp > 5 ? this.baseSalary * 1.2 + 500 : this.baseSalary);
+        if (this.exp > 2 && this.exp < 5) {
+            return this.baseSalary+200;
+        }
+        if (this.exp >= 5) {
+            return this.baseSalary * 1.2 + 500;
+        }
+        return this.baseSalary;
+       
     };
 }
 
@@ -22,7 +29,7 @@ class Designer extends Employee {
         this.effCoeff = effCoeff;
     }
     countedSalary() {
-        return super.countedSalary() * this.effCoeff;
+        return (super.countedSalary() * this.effCoeff).toFixed();
     }
 }
 
@@ -31,16 +38,17 @@ class Manager extends Employee {
         super(name, surname, baseSalary, exp);
         this.team = team;
     }
-    
-
     countedSalary() {
-        let countDeveloper;
-        this.team.forEach(employee => {
-            if (typeof employee === "Developer") {
-                countDeveloper++;
-            }
-        });
-        return this.team.lenght > 5? super.countedSalary() + 200 : (this.team.lenght > 10 ? super.countedSalary() + 300 : super.countedSalary()) * (countDeveloper / this.team.lenght > 0.5 ? 1.1 : 1);
+        let developersAmount = 0;
+        let solarka = super.countedSalary();
+        for (let item of this.team) {
+            if (item.constructor.name == "Developer")  developersAmount++;
+        }
+        if (this.team.length > 5 && this.team.length < 10) solarka += 200;
+        if (this.team.length >= 10 ) solarka += 300;
+        if (developersAmount > this.team.length / 2 ) solarka *= 1.1;
+        return solarka.toFixed();
+        
     }
 }
 
@@ -50,10 +58,11 @@ class Departament {
     }
     giveSalary() {
         this.managers.forEach(manager => {
-            console.log(`${manager.name} ${manager.surname} отримує ${manager.countedSalary()} шекелей`);
+            console.log(`${manager.name} ${manager.surname} receives ${manager.countedSalary()} money`);
             manager.team.forEach(employee => {
-                console.log(`${employee.name} ${employee.surname} отримує ${employee.countedSalary()} шекелей`);
+                console.log(`${employee.name} ${employee.surname} receives ${employee.countedSalary()} money`);
             });
         });
     }
 }
+
