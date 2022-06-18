@@ -12,13 +12,15 @@ body {
 }
 
 .circles {
-    display: flex;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 25px);
+    grid-template-rows: 25px;
+    grid-gap: 10px;
 }
 
 .circle {
-    width: 25px;
-    height: 25px;
-    margin: 10px 0 0 10px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -42,16 +44,12 @@ body {
 }
 
 .digit-keys {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(5, 80px);
 }
 
 .button {
-    width: 100px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 40px;
     color: inherit;
     background-color: #797880;
@@ -72,6 +70,7 @@ body {
 }
 
 .zero {
-    width: 200px;
+    grid-column-start: 1;
+    grid-column-end: 3;
     border-bottom-left-radius: 10px;
 }
