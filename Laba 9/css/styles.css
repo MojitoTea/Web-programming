@@ -1,0 +1,121 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #111;
+}
+
+li {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    /* "img ."  */
+    "img name"
+    "img sex";
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+li > div {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    border-radius: 10%;
+    grid-area: img;
+}
+
+li > div > img {
+    height: auto;
+    width: 150px;
+    position: relative;
+    top: -20px;
+}
+
+li > b.name {
+    margin-top: auto;
+    color: white;
+    grid-area: name;
+    font-size: xx-large;
+}
+
+li > p.sex {
+    color: white;
+    font-size: large;
+    grid-area: sex;
+}
+
+#modal {
+
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.mod{
+    border-radius: 20px;
+    border: solid 2px white;
+}
+
+.modal-content {
+    position: absolute;
+    margin: auto;
+    margin-top: 50px;
+    height: 80%;
+    background-color: #202124;
+
+}
+
+
+.modal-content > img {
+    
+
+}
+
+.modal-content > section {
+
+    padding: 20px;
+}
+
+p.about {
+    color: gray;
+    font-size: small;
+    margin: auto
+}
+
+p.data {
+    margin: auto;
+    width: 300px;
+    height: auto;
+    color: white;
+}
+
+b.name {
+    color: white;
+    font-size: xx-large;
+}
+
+.button-close-modal {
+  flex-shrink: 0;
+  display: block;
+  font-size: 1rem;
+  height: 40px;
+  width: 40px;
+  float: right;
+  font-weight: bold;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.button-close-modal:hover {
+  transform: rotate(180deg);
+  background-color: #000;
+  color: #fff;
+}
